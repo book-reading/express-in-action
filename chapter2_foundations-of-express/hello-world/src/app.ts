@@ -10,10 +10,10 @@ const app: Express = express();
 //   next();
 // });
 
-app.use(logger('short'));
+// app.use(logger('short'));
 
-const publicPath: string = path.resolve(__dirname, '../');
-app.use(express.static(publicPath));
+// const publicPath: string = path.resolve(__dirname, '../');
+// app.use(express.static(publicPath));
 
 // app.use((req: Request, res: Response, next: NextFunction): void => {
 //   const minute: number = (new Date()).getMinutes();
@@ -35,9 +35,77 @@ app.use(express.static(publicPath));
 //   res.end('Hello, world!');
 // });
 
-app.use((req: Request, res: Response): void => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Looks like you don\'t find a static file.');
+// app.use((req: Request, res: Response): void => {
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   res.end('Looks like you don\'t find a static file.');
+// });
+
+// --- 3.10
+// const publicPath: string = path.resolve(__dirname, '../');
+// app.use(express.static(publicPath));
+
+// app.get('/', (req: Request, res: Response): void => {
+//   res.end('Welcome to my homepage!');
+// });
+
+// app.get('/about', (req: Request, res: Response): void => {
+//   res.end('Welcome to the about page!');
+// });
+
+// app.get('/weather', (req: Request, res: Response): void => {
+//   res.end('The current weather is NICE.');
+// });
+
+// app.use((req: Request, res: Response): void => {
+//   res.statusCode = 404;
+//   res.end('404!');
+// });
+
+// --- 3.11
+// app.get('/hello/:who', (req: Request, res: Response): void => {
+//   res.end(`Hello, ${req.params.who}.`);
+//   // 这存在点安全方面问题
+// });
+
+// --- 3.12
+// app.get('/helloworld', (req: Request, res: Response): void => {
+//   res.redirect('/hello/world');
+// });
+
+// app.get('/hello/:who', (req: Request, res: Response): void => {
+//   res.end(`Hello, ${req.params.who}.`);
+//   // 这存在点安全方面问题
+// });
+
+// --- 3.13
+// app.get('/file', (req: Request, res: Response): void => {
+//   res.sendFile(path.resolve(__dirname, '../package.json'));
+// });
+
+// --- 3.14
+// const EVIL_IP: string = '::1';
+
+// app.use((req: Request, res: Response, next: NextFunction): void => {
+//   if (req.ip === EVIL_IP) {
+//     res.status(401).send('Not allowed!');
+//   } else {
+//     next();
+//   }
+// });
+
+// app.use((req: Request, res: Response): void => {
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   res.end('Hello, world!');
+// });
+
+// --- 3.17
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/', (req: Request, res: Response): void => {
+  res.render('index', {
+    message: 'Hey everyone! This is my webpage.'
+  });
 });
 
 http.createServer(app).listen(3000);

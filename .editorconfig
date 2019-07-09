@@ -43,7 +43,7 @@ trim_trailing_whitespace = false
 trim_trailing_whitespace = false
 
 # HTML
-[*.html]
+[*.{html,ejs}]
 indent_size = 2
 
 # Java

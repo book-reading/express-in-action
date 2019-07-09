@@ -3,7 +3,7 @@
 
   "extends": "./node_modules/slime-tsconfig/tsconfig.node.json",
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./src",
     "noUnusedLocals": false
   }
 }
