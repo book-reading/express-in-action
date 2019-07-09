@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+
+  "extends": "./node_modules/slime-tsconfig/tsconfig.node.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "noUnusedLocals": false
+  }
+}

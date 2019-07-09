@@ -1,0 +1,29 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build & npm run serve",
+    "serve": "node dist/app.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "tslint": "tslint -c ./tslint.json '**/*.ts{,x}'",
+    "tslint:fix": "tslint -c ./tslint.json --fix '**/*.ts{,x}'"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^12.6.1",
+    "slime-tsconfig": "^0.1.4",
+    "slime-tslint-rules": "^0.2.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
