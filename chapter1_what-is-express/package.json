@@ -1,0 +1,24 @@
+{
+  "name": "chapter1_what-is-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build & npm run serve",
+    "serve": "node dist/app.js",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "slime-tsconfig": "^0.1.4",
+    "slime-tslint-rules": "^0.1.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  }
+}
