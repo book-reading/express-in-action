@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "slime-tslint-rules"
+  ],
+  "rules": {
+  }
+}
